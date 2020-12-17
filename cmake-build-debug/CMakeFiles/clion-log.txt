@@ -1,0 +1,4 @@
+"D:\softwares\CLion 2020.2.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Dell\Desktop\Shortest_Distance_Algorithms
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/cmake-build-debug

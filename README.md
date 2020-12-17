@@ -1,0 +1,2 @@
+# Shortest_Path_Algorithms
+ 一个实现了多种最短路径搜索算法的代码仓库，包括主流的Dijkstra及其变种，以及多种最短路径索引算法
