@@ -21,6 +21,20 @@ public:
 };
 #endif
 
+#ifndef PQ_ITEM
+#define PQ_ITEM
+class pq_item{
+public:
+    unsigned int node_id;
+    double toNodeDistance;
+
+    pq_item(unsigned int nodeId, double toNodeDistance);
+    bool operator > (const pq_item&n) const{
+        return toNodeDistance > n.toNodeDistance;
+    }
+};
+#endif
+
 #ifndef SHORTEST_DISTANCE_ALGORITHMS_DIJKSTRA_H
 #define SHORTEST_DISTANCE_ALGORITHMS_DIJKSTRA_H
 #include <limits>
@@ -28,6 +42,8 @@ public:
 #include <set>
 #include <unordered_map>
 #include <stack>
+#include <queue>
+#include <algorithm>
 using namespace std;
 
 class Dijkstra {
@@ -35,6 +51,9 @@ public:
     Dijkstra(const unordered_map<unsigned int, set<Road> >& input_graph);
     double compute_shortest_distance(unsigned int nodeS, unsigned int nodeT);
     double compute_shortest_path(unsigned int nodeS, unsigned int nodeT, vector<unsigned int> &pathRes);
+
+    double compute_shortest_distance_priority_queue(unsigned int nodeS,unsigned int nodeT);
+    double compute_shortest_path_priority_queue(unsigned int nodeS,unsigned int nodeT,vector<unsigned int> &pathRes);
 private:
     vector<double> distance;
     vector<bool> visited;

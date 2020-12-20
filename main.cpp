@@ -9,7 +9,8 @@
  * @param distance
  * @param pathResult
  */
-void displayResult(unsigned int testcaseID,unsigned int nodeS,unsigned int nodeT,double distance,const vector<unsigned int> & pathResult,double time){
+void displayResult(string algorithmName,unsigned int testcaseID,unsigned int nodeS,unsigned int nodeT,double distance,const vector<unsigned int> & pathResult,double time){
+    cout<<"algorithm: "<<algorithmName<<" "<<endl;
     cout<<"testcase: "<<testcaseID<<". start node:"<<nodeS<<". end node: "<<nodeT<<endl;
     cout<<"the shortest distance is:"<<distance<<endl;
     cout<<"the path is :";
@@ -31,17 +32,29 @@ int main() {
 
     Dijkstra dijkstra(graph);
 
+    srand((unsigned )time(NULL));
     for(int i=0;i<100;i++){
+
         unsigned int nodeS=rand()%graphsize;
         unsigned int nodeT=rand()%graphsize;
 
         clock_t start = 0, finish = 0;
         start = clock();
         vector<unsigned int> pathResult;
-        double distance=dijkstra.compute_shortest_path(nodeS,nodeT,pathResult);
+        //double distance=dijkstra.compute_shortest_path(nodeS,nodeT,pathResult);
+        double distance=dijkstra.compute_shortest_distance_priority_queue(nodeS,nodeT);
         finish=clock();
         double totaltime = (double) (finish - start) / CLOCKS_PER_SEC;
-        displayResult(i,nodeS,nodeT,distance,pathResult,totaltime);
+        displayResult("Dijkstra classic",i,nodeS,nodeT,distance,pathResult,totaltime);
+/*
+        start = 0, finish = 0;
+        start = clock();
+        //double distance=dijkstra.compute_shortest_path(nodeS,nodeT,pathResult);
+        distance=dijkstra.compute_shortest_distance(nodeS,nodeT);
+        finish=clock();
+        totaltime = (double) (finish - start) / CLOCKS_PER_SEC;
+        displayResult("Dijkstra priority queue",i,nodeS,nodeT,distance,pathResult,totaltime);
+        */
     }
 
     return 0;

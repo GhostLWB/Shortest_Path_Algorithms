@@ -39,7 +39,9 @@ double Dijkstra::compute_shortest_distance(unsigned int nodeS, unsigned int node
     // init
     distance=vector<double>(graphSize,numeric_limits<float>::max());
     visited=vector<bool>(graphSize,false);
-    path=vector<unsigned int> (graphSize,-1);
+    //path=vector<unsigned int> (graphSize,-1);
+
+
     distance[nodeS]=0.0;
     // now start iterating, calculate distance from reference node to other nodes
     for (int k = 0; k <= graphSize; k++) {
@@ -107,3 +109,35 @@ double Dijkstra::compute_shortest_path(unsigned int nodeS, unsigned int nodeT, v
     }
     return distance[nodeT];
 }
+
+double Dijkstra::compute_shortest_distance_priority_queue(unsigned int nodeS, unsigned int nodeT) {
+    // init
+    distance=vector<double>(graphSize,numeric_limits<float>::max());
+    priority_queue<pq_item,vector<pq_item>,greater<pq_item>> myQueue;
+
+    distance[nodeS]=0.0;
+    myQueue.push({nodeS,distance[nodeS]});
+    // now start iterating, calculate distance from reference node to other nodes
+    while(!myQueue.empty()) {
+        // find the min distance node that is unvisited
+        pq_item currItem=myQueue.top();
+        myQueue.pop();
+        int currNode = currItem.node_id;
+        if (distance[currNode] < currItem.toNodeDistance) {
+            continue;
+        }
+        set<Road> adjcent = graph.find(currNode)->second;
+        for (Road iterator: adjcent) {
+            unsigned int adjNode = iterator.Start_NID == currNode ? iterator.End_NID : iterator.Start_NID;
+            // update distance array
+            if (  distance[currNode] + iterator.Road_length < distance[adjNode]) {
+                distance[adjNode] = distance[currNode] + iterator.Road_length;
+                myQueue.push({adjNode,distance[adjNode]});
+            }
+        }
+
+    }
+    return distance[nodeT];
+}
+
+pq_item::pq_item(unsigned int nodeId, double toNodeDistance) : node_id(nodeId), toNodeDistance(toNodeDistance) {}
