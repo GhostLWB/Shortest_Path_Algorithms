@@ -142,6 +142,33 @@ Shortest_Distance_Algorithms/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Shortest_Distance_Algorithms.dir\build.make CMakeFiles/Shortest_Distance_Algorithms.dir/build
 .PHONY : Shortest_Distance_Algorithms/fast
 
+algorithms/A_Star.obj: algorithms/A_Star.cpp.obj
+
+.PHONY : algorithms/A_Star.obj
+
+# target to build an object file
+algorithms/A_Star.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Shortest_Distance_Algorithms.dir\build.make CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/A_Star.cpp.obj
+.PHONY : algorithms/A_Star.cpp.obj
+
+algorithms/A_Star.i: algorithms/A_Star.cpp.i
+
+.PHONY : algorithms/A_Star.i
+
+# target to preprocess a source file
+algorithms/A_Star.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Shortest_Distance_Algorithms.dir\build.make CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/A_Star.cpp.i
+.PHONY : algorithms/A_Star.cpp.i
+
+algorithms/A_Star.s: algorithms/A_Star.cpp.s
+
+.PHONY : algorithms/A_Star.s
+
+# target to generate assembly for a file
+algorithms/A_Star.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Shortest_Distance_Algorithms.dir\build.make CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/A_Star.cpp.s
+.PHONY : algorithms/A_Star.cpp.s
+
 algorithms/Dijkstra.obj: algorithms/Dijkstra.cpp.obj
 
 .PHONY : algorithms/Dijkstra.obj
@@ -169,32 +196,32 @@ algorithms/Dijkstra.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Shortest_Distance_Algorithms.dir\build.make CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Dijkstra.cpp.s
 .PHONY : algorithms/Dijkstra.cpp.s
 
-graph.obj: graph.cpp.obj
+algorithms/graph.obj: algorithms/graph.cpp.obj
 
-.PHONY : graph.obj
+.PHONY : algorithms/graph.obj
 
 # target to build an object file
-graph.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Shortest_Distance_Algorithms.dir\build.make CMakeFiles/Shortest_Distance_Algorithms.dir/graph.cpp.obj
-.PHONY : graph.cpp.obj
+algorithms/graph.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Shortest_Distance_Algorithms.dir\build.make CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.obj
+.PHONY : algorithms/graph.cpp.obj
 
-graph.i: graph.cpp.i
+algorithms/graph.i: algorithms/graph.cpp.i
 
-.PHONY : graph.i
+.PHONY : algorithms/graph.i
 
 # target to preprocess a source file
-graph.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Shortest_Distance_Algorithms.dir\build.make CMakeFiles/Shortest_Distance_Algorithms.dir/graph.cpp.i
-.PHONY : graph.cpp.i
+algorithms/graph.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Shortest_Distance_Algorithms.dir\build.make CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.i
+.PHONY : algorithms/graph.cpp.i
 
-graph.s: graph.cpp.s
+algorithms/graph.s: algorithms/graph.cpp.s
 
-.PHONY : graph.s
+.PHONY : algorithms/graph.s
 
 # target to generate assembly for a file
-graph.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Shortest_Distance_Algorithms.dir\build.make CMakeFiles/Shortest_Distance_Algorithms.dir/graph.cpp.s
-.PHONY : graph.cpp.s
+algorithms/graph.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Shortest_Distance_Algorithms.dir\build.make CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.s
+.PHONY : algorithms/graph.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -232,12 +259,15 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Shortest_Distance_Algorithms
+	@echo ... algorithms/A_Star.obj
+	@echo ... algorithms/A_Star.i
+	@echo ... algorithms/A_Star.s
 	@echo ... algorithms/Dijkstra.obj
 	@echo ... algorithms/Dijkstra.i
 	@echo ... algorithms/Dijkstra.s
-	@echo ... graph.obj
-	@echo ... graph.i
-	@echo ... graph.s
+	@echo ... algorithms/graph.obj
+	@echo ... algorithms/graph.i
+	@echo ... algorithms/graph.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

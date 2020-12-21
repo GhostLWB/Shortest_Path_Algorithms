@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/A_Star.cpp.obj"
   "CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Dijkstra.cpp.obj"
-  "CMakeFiles/Shortest_Distance_Algorithms.dir/graph.cpp.obj"
+  "CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.obj"
   "CMakeFiles/Shortest_Distance_Algorithms.dir/main.cpp.obj"
   "Shortest_Distance_Algorithms.exe"
   "Shortest_Distance_Algorithms.exe.manifest"

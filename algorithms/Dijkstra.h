@@ -49,11 +49,11 @@ using namespace std;
 class Dijkstra {
 public:
     Dijkstra(const unordered_map<unsigned int, set<Road> >& input_graph);
-    double compute_shortest_distance(unsigned int nodeS, unsigned int nodeT);
-    double compute_shortest_path(unsigned int nodeS, unsigned int nodeT, vector<unsigned int> &pathRes);
+    double ShortestDistance(unsigned int nodeS, unsigned int nodeT);
+    double ShortestPath(unsigned int nodeS, unsigned int nodeT, vector<unsigned int> &pathRes);
 
-    double compute_shortest_distance_priority_queue(unsigned int nodeS,unsigned int nodeT);
-    double compute_shortest_path_priority_queue(unsigned int nodeS,unsigned int nodeT,vector<unsigned int> &pathRes);
+    double ShortestDistancePriorityQueue(unsigned int nodeS, unsigned int nodeT);
+    double ShortestPathPriorityQueue(unsigned int nodeS, unsigned int nodeT, vector<unsigned int> &pathRes);
 private:
     vector<double> distance;
     vector<bool> visited;

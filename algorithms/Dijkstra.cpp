@@ -35,7 +35,7 @@ int Dijkstra::find_min_node_id() {
  * @param nodeT
  * @return
  */
-double Dijkstra::compute_shortest_distance(unsigned int nodeS, unsigned int nodeT) {
+double Dijkstra::ShortestDistance(unsigned int nodeS, unsigned int nodeT) {
     // init
     distance=vector<double>(graphSize,numeric_limits<float>::max());
     visited=vector<bool>(graphSize,false);
@@ -70,7 +70,7 @@ double Dijkstra::compute_shortest_distance(unsigned int nodeS, unsigned int node
  * @param pathRes the result path stores here
  * @return
  */
-double Dijkstra::compute_shortest_path(unsigned int nodeS, unsigned int nodeT, vector<unsigned int> &pathRes) {
+double Dijkstra::ShortestPath(unsigned int nodeS, unsigned int nodeT, vector<unsigned int> &pathRes) {
     // init
     distance=vector<double>(graphSize,numeric_limits<float>::max());
     visited=vector<bool>(graphSize,false);
@@ -110,7 +110,13 @@ double Dijkstra::compute_shortest_path(unsigned int nodeS, unsigned int nodeT, v
     return distance[nodeT];
 }
 
-double Dijkstra::compute_shortest_distance_priority_queue(unsigned int nodeS, unsigned int nodeT) {
+/**
+ * compute the shortest distance using priority queue optimized Dijktra
+ * @param nodeS
+ * @param nodeT
+ * @return
+ */
+double Dijkstra::ShortestDistancePriorityQueue(unsigned int nodeS, unsigned int nodeT) {
     // init
     distance=vector<double>(graphSize,numeric_limits<float>::max());
     priority_queue<pq_item,vector<pq_item>,greater<pq_item>> myQueue;
@@ -140,4 +146,55 @@ double Dijkstra::compute_shortest_distance_priority_queue(unsigned int nodeS, un
     return distance[nodeT];
 }
 
+/**
+ * compute the shortest distance and record the shortest path using priority queue optimized Dijktra
+ * @param nodeS
+ * @param nodeT
+ * @param pathRes
+ * @return
+ */
+double Dijkstra::ShortestPathPriorityQueue(unsigned int nodeS, unsigned int nodeT,
+                                           vector<unsigned int> &pathRes) {
+    // init
+    distance=vector<double>(graphSize,numeric_limits<float>::max());
+    priority_queue<pq_item,vector<pq_item>,greater<pq_item>> myQueue;
+    path=vector<unsigned int> (graphSize,-1);
+
+    distance[nodeS]=0.0;
+    myQueue.push({nodeS,distance[nodeS]});
+    // now start iterating, calculate distance from reference node to other nodes
+    while(!myQueue.empty()) {
+        // find the min distance node that is unvisited
+        pq_item currItem=myQueue.top();
+        myQueue.pop();
+        int currNode = currItem.node_id;
+        if (distance[currNode] < currItem.toNodeDistance) {
+            continue;
+        }
+        set<Road> adjcent = graph.find(currNode)->second;
+        for (Road iterator: adjcent) {
+            unsigned int adjNode = iterator.Start_NID == currNode ? iterator.End_NID : iterator.Start_NID;
+            // update distance array
+            if (  distance[currNode] + iterator.Road_length < distance[adjNode]) {
+                distance[adjNode] = distance[currNode] + iterator.Road_length;
+                myQueue.push({adjNode,distance[adjNode]});
+                path[adjNode]=currNode;
+            }
+        }
+
+    }
+    // find the path stored in path vector
+    stack<unsigned int> q;
+    unsigned int n=nodeT;
+    while(path[n]!=-1){
+        q.push(n);
+        n=path[n];
+    }
+    pathRes.push_back(nodeS);
+    while(!q.empty()){
+        pathRes.push_back(q.top());
+        q.pop();
+    }
+    return distance[nodeT];
+}
 pq_item::pq_item(unsigned int nodeId, double toNodeDistance) : node_id(nodeId), toNodeDistance(toNodeDistance) {}

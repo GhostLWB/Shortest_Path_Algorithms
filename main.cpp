@@ -1,6 +1,7 @@
-#include "graph.h"
-#include <random>
+#include "algorithms/graph.h"
 #include "algorithms/Dijkstra.h"
+#include "algorithms/A_Star.h"
+#include <random>
 /**
  * display the query information and query result
  * @param testcaseID
@@ -22,39 +23,59 @@ void displayResult(string algorithmName,unsigned int testcaseID,unsigned int nod
             cout<<pathResult[i]<<endl;
         }
     }
-    cout<<"time used: "<<time<<" seconds."<<endl;
+    cout<<"time used: "<<time<<" seconds."<<endl<<endl;
 }
 
 int main() {
-    read_file("../dataset/map_california.txt");
+    // global variable
+    unordered_map<unsigned int, set<Road> > graph; // the road network
+    unordered_map<unsigned int, pair<double,double>> lonlat; // node_id longitude latitude
+    read_file("../dataset/map_california.txt",graph);
+    read_lonlat("../dataset/lonlat_california.txt",lonlat);
     unsigned int graphsize=graph.size();
     cout<<"the number of nodes in graph is: "<<graphsize<<endl;
 
     Dijkstra dijkstra(graph);
+    A_Star aStar(graph,lonlat);
 
     srand((unsigned )time(NULL));
     for(int i=0;i<100;i++){
 
         unsigned int nodeS=rand()%graphsize;
         unsigned int nodeT=rand()%graphsize;
+        //unsigned int nodeS=15;
+        //unsigned int nodeT=7;
 
         clock_t start = 0, finish = 0;
         start = clock();
         vector<unsigned int> pathResult;
-        //double distance=dijkstra.compute_shortest_path(nodeS,nodeT,pathResult);
-        double distance=dijkstra.compute_shortest_distance_priority_queue(nodeS,nodeT);
+        pathResult=vector<unsigned int> ();
+        //double distance= dijkstra.ShortestPathPriorityQueue(nodeS, nodeT, pathResult);
+        double distance=dijkstra.ShortestDistancePriorityQueue(nodeS,nodeT);
         finish=clock();
         double totaltime = (double) (finish - start) / CLOCKS_PER_SEC;
-        displayResult("Dijkstra classic",i,nodeS,nodeT,distance,pathResult,totaltime);
-/*
+        displayResult("Dijkstra priority queue",i,nodeS,nodeT,distance,pathResult,totaltime);
+
+        /*
         start = 0, finish = 0;
         start = clock();
-        //double distance=dijkstra.compute_shortest_path(nodeS,nodeT,pathResult);
-        distance=dijkstra.compute_shortest_distance(nodeS,nodeT);
+        pathResult=vector<unsigned int> ();
+        distance= dijkstra.ShortestPath(nodeS, nodeT, pathResult);
+        //distance=dijkstra.ShortestDistance(nodeS,nodeT);
         finish=clock();
         totaltime = (double) (finish - start) / CLOCKS_PER_SEC;
-        displayResult("Dijkstra priority queue",i,nodeS,nodeT,distance,pathResult,totaltime);
-        */
+        displayResult("Dijkstra priority classic",i,nodeS,nodeT,distance,pathResult,totaltime);
+         */
+
+        start = 0, finish = 0;
+        start = clock();
+        pathResult=vector<unsigned int> ();
+        //distance= aStar.ShortestPath(nodeS, nodeT, pathResult);
+        distance=aStar.ShortestDistance(nodeS,nodeT);
+        finish=clock();
+        totaltime = (double) (finish - start) / CLOCKS_PER_SEC;
+        displayResult("A Star",i,nodeS,nodeT,distance,pathResult,totaltime);
+
     }
 
     return 0;

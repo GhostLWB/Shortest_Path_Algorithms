@@ -80,16 +80,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/A_Star.cpp">
+			<Option target="Shortest_Distance_Algorithms"/>
+		</Unit>
+		<Unit filename="C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/A_Star.h">
+			<Option target="Shortest_Distance_Algorithms"/>
+		</Unit>
 		<Unit filename="C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/Dijkstra.cpp">
 			<Option target="Shortest_Distance_Algorithms"/>
 		</Unit>
 		<Unit filename="C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/Dijkstra.h">
 			<Option target="Shortest_Distance_Algorithms"/>
 		</Unit>
-		<Unit filename="C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/graph.cpp">
+		<Unit filename="C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/graph.cpp">
 			<Option target="Shortest_Distance_Algorithms"/>
 		</Unit>
-		<Unit filename="C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/graph.h">
+		<Unit filename="C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/graph.h">
 			<Option target="Shortest_Distance_Algorithms"/>
 		</Unit>
 		<Unit filename="C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/main.cpp">
