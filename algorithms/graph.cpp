@@ -9,7 +9,7 @@
 * @param graph
 * @return void  the road network data is stored in global variable "graph"
 */
-void read_file(string file_path,unordered_map<unsigned int, set<Road> >& graph) {
+void read_file(string file_path,unordered_map<unsigned int, vector<Edge> >& graph) {
 
     //read file
     clock_t start = 0, finish = 0;
@@ -53,29 +53,30 @@ void read_file(string file_path,unordered_map<unsigned int, set<Road> >& graph) 
 
 
         //cout<<"start: "<<start_NID<<", end: "<<end_NID<<endl;
-        Road road(start_NID, end_NID, road_length);
+        Edge e_star=Edge(end_NID,road_length);
+        Edge e_end=Edge(start_NID,road_length);
 
         // find road set according to start node id
         auto iterator1 = graph.find(start_NID);
         if (iterator1 != graph.end()) {
-            set<Road> value = iterator1->second;
-            value.emplace(road);
+            vector<Edge> value = iterator1->second;
+            value.push_back(e_star);
             graph[start_NID] = value;
         } else {
-            set<Road> value;
-            value.insert(road);
+            vector<Edge> value;
+            value.push_back(e_star);
             graph[start_NID] = value;
         }
 
         // find road set according to end node id
         iterator1 = graph.find(end_NID);
         if (iterator1 != graph.end()) {
-            set<Road> value = iterator1->second;
-            value.emplace(road);
+            vector<Edge> value = iterator1->second;
+            value.push_back(e_end);
             graph[end_NID] = value;
         } else {
-            set<Road> value;
-            value.insert(road);
+            vector<Edge> value;
+            value.push_back(e_end);
             graph[end_NID] = value;
         }
         //cout<<graph.size()<<endl;

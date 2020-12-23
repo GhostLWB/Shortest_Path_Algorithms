@@ -28,7 +28,7 @@ void displayResult(string algorithmName,unsigned int testcaseID,unsigned int nod
 
 int main() {
     // global variable
-    unordered_map<unsigned int, set<Road> > graph; // the road network
+    unordered_map<unsigned int, vector<Edge> > graph; // the road network
     unordered_map<unsigned int, pair<double,double>> lonlat; // node_id longitude latitude
     read_file("../dataset/map_california.txt",graph);
     read_lonlat("../dataset/lonlat_california.txt",lonlat);

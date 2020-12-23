@@ -7,7 +7,7 @@
  *  constructor for class graph.
  *  assign graph size for variable graphSize
  */
-Dijkstra::Dijkstra(const unordered_map<unsigned int, set<Road> > &input_graph){
+Dijkstra::Dijkstra(const unordered_map<unsigned int, vector<Edge> > &input_graph){
     graph=input_graph;
     graphSize=graph.size();
 };
@@ -50,9 +50,9 @@ double Dijkstra::ShortestDistance(unsigned int nodeS, unsigned int nodeT) {
         if (currNode == -1) { // the rest nodes are unreachable
             break;
         }
-        set<Road> adjcent = graph.find(currNode)->second;
-        for (Road iterator: adjcent) {
-            unsigned int adjNode = iterator.Start_NID == currNode ? iterator.End_NID : iterator.Start_NID;
+        vector<Edge> adjcent = graph.find(currNode)->second;
+        for (Edge iterator: adjcent) {
+            unsigned int adjNode = iterator.Neighbor;
             // update distance array
             if (distance[currNode] + iterator.Road_length < distance[adjNode]) {
                 distance[adjNode] = distance[currNode] + iterator.Road_length;
@@ -83,9 +83,9 @@ double Dijkstra::ShortestPath(unsigned int nodeS, unsigned int nodeT, vector<uns
         if (currNode == -1) { // the rest nodes are unreachable
             break;
         }
-        set<Road> adjcent = graph.find(currNode)->second;
-        for (Road iterator: adjcent) {
-            unsigned int adjNode = iterator.Start_NID == currNode ? iterator.End_NID : iterator.Start_NID;
+        vector<Edge> adjcent = graph.find(currNode)->second;
+        for (Edge iterator: adjcent) {
+            unsigned int adjNode = iterator.Neighbor;
             // update distance array
             if (distance[currNode] + iterator.Road_length < distance[adjNode]) {
                 distance[adjNode] = distance[currNode] + iterator.Road_length;
@@ -132,9 +132,9 @@ double Dijkstra::ShortestDistancePriorityQueue(unsigned int nodeS, unsigned int 
         if (distance[currNode] < currItem.toNodeDistance) {
             continue;
         }
-        set<Road> adjcent = graph.find(currNode)->second;
-        for (Road iterator: adjcent) {
-            unsigned int adjNode = iterator.Start_NID == currNode ? iterator.End_NID : iterator.Start_NID;
+        vector<Edge> adjcent = graph.find(currNode)->second;
+        for (Edge iterator: adjcent) {
+            unsigned int adjNode = iterator.Neighbor;
             // update distance array
             if (  distance[currNode] + iterator.Road_length < distance[adjNode]) {
                 distance[adjNode] = distance[currNode] + iterator.Road_length;
@@ -171,9 +171,9 @@ double Dijkstra::ShortestPathPriorityQueue(unsigned int nodeS, unsigned int node
         if (distance[currNode] < currItem.toNodeDistance) {
             continue;
         }
-        set<Road> adjcent = graph.find(currNode)->second;
-        for (Road iterator: adjcent) {
-            unsigned int adjNode = iterator.Start_NID == currNode ? iterator.End_NID : iterator.Start_NID;
+        vector<Edge> adjcent = graph.find(currNode)->second;
+        for (Edge iterator: adjcent) {
+            unsigned int adjNode = iterator.Neighbor;
             // update distance array
             if (  distance[currNode] + iterator.Road_length < distance[adjNode]) {
                 distance[adjNode] = distance[currNode] + iterator.Road_length;

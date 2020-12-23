@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="e468797a-b819-4682-a96e-30c5db5deca3" name="Lab515">
+        <fileTransfer rootFolder="/data1/liwenbin/workspace" accessType="SFTP" host="172.18.167.114" port="51100" sshConfigId="084fc349-2360-4dea-b7e8-9438329a3ccc" sshConfig="liwenbin@172.18.167.114:51100 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

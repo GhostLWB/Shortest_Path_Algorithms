@@ -4,7 +4,7 @@
 
 #include "A_Star.h"
 
-A_Star::A_Star(const unordered_map<unsigned int, set<Road>> &input_graph,
+A_Star::A_Star(const unordered_map<unsigned int, vector<Edge>> &input_graph,
                unordered_map<unsigned int, pair<double, double>> &input_lonlat) {
     graph = input_graph;
     lonlat = input_lonlat;
@@ -18,13 +18,13 @@ Node_A::Node_A(unsigned int inputNodeid, double inputGScore, double inputFScore,
 }
 
 /**
- *
+ * Shortest distance algorithm using A star algorithm
  * @param nodeS
  * @param nodeT
  * @return
  */
 double A_Star::ShortestDistance(unsigned int nodeS, unsigned int nodeT) {
-    set<pair<double, Node_A *>> openlist;
+    set<pair<double, Node_A *>> openlist; // < f_score, node pointer>
     vector<bool> is_in_open = vector<bool>(graph.size(), false);
     vector<bool> is_in_close = vector<bool>(graph.size(), false);
 
@@ -47,14 +47,9 @@ double A_Star::ShortestDistance(unsigned int nodeS, unsigned int nodeT) {
         is_in_close[curr.second->node_id] = true;
 
         // find its neighbor node and expand
-        set<Road> roads = graph.find(curr.second->node_id)->second;
+        vector<Edge> roads = graph.find(curr.second->node_id)->second;
         for (auto road:roads) {
-            unsigned int neighbor_node_id;
-            if (road.Start_NID == curr.second->node_id) {
-                neighbor_node_id = road.End_NID;
-            } else {
-                neighbor_node_id = road.Start_NID;
-            }
+            unsigned int neighbor_node_id=road.Neighbor;
 
             if (is_in_close[neighbor_node_id]) { // neighbor_node is in close list
                 continue;
@@ -106,8 +101,14 @@ double A_Star::getDistance(double lon1, double lat1, double lon2, double lat2) {
     return distance;
 }
 
+/**
+ * The function computing f score, using the Euclidean distance computed by longitude and latitude
+ * @param GScore
+ * @param curNode
+ * @param nodeT
+ **/
 double A_Star::compute_f_score(double GScore, unsigned int curNode, unsigned int nodeT) {
-    return GScore;
+    //return GScore;
     pair<double, double> lonlatCurNode = lonlat.find(curNode)->second; // longitude,latitude
     pair<double, double> lonlatNodeT = lonlat.find(nodeT)->second;
 

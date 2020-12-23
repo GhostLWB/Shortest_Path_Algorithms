@@ -1,25 +1,7 @@
 //
 // Created by Dell on 2020/12/16.
 //
-#ifndef ROAD_STRUCTURE
-#define ROAD_STRUCTURE
-class Road {
-public:
-    unsigned int Start_NID;
-    unsigned int End_NID;
-    double Road_length;
 
-public:
-    Road() = default;
-
-    Road(unsigned int S_NID, unsigned int E_NID, double RL) : \
-    Start_NID(S_NID), End_NID(E_NID), Road_length(RL) {};
-
-    bool operator<(const Road &a) const {
-        return a.Road_length <= Road_length;
-    }
-};
-#endif
 
 #ifndef PQ_ITEM
 #define PQ_ITEM
@@ -44,11 +26,12 @@ public:
 #include <stack>
 #include <queue>
 #include <algorithm>
+#include "graph.h"
 using namespace std;
 
 class Dijkstra {
 public:
-    Dijkstra(const unordered_map<unsigned int, set<Road> >& input_graph);
+    Dijkstra(const unordered_map<unsigned int, vector<Edge> >& input_graph);
     double ShortestDistance(unsigned int nodeS, unsigned int nodeT);
     double ShortestPath(unsigned int nodeS, unsigned int nodeT, vector<unsigned int> &pathRes);
 
@@ -58,7 +41,7 @@ private:
     vector<double> distance;
     vector<bool> visited;
     vector<unsigned int> path;
-    unordered_map<unsigned int, set<Road> > graph;
+    unordered_map<unsigned int, vector<Edge> > graph;
     unsigned int graphSize;
 
     int find_min_node_id();

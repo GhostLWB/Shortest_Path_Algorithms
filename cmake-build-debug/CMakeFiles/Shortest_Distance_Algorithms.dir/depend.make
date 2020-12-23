@@ -3,9 +3,11 @@
 
 CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/A_Star.cpp.obj: ../algorithms/A_Star.cpp
 CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/A_Star.cpp.obj: ../algorithms/A_Star.h
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/A_Star.cpp.obj: ../algorithms/graph.h
 
 CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Dijkstra.cpp.obj: ../algorithms/Dijkstra.cpp
 CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Dijkstra.cpp.obj: ../algorithms/Dijkstra.h
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Dijkstra.cpp.obj: ../algorithms/graph.h
 
 CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.obj: ../algorithms/graph.cpp
 CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.obj: ../algorithms/graph.h

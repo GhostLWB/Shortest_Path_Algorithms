@@ -4,9 +4,11 @@
 CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/A_Star.cpp.obj
  C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/A_Star.cpp
  C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/A_Star.h
+ C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/graph.h
 CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Dijkstra.cpp.obj
  C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/Dijkstra.cpp
  C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/Dijkstra.h
+ C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/graph.h
 CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.obj
  C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/graph.cpp
  C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/graph.h

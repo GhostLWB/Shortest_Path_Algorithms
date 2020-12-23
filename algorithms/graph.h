@@ -4,19 +4,15 @@
 
 #ifndef ROAD_STRUCTURE
 #define ROAD_STRUCTURE
-class Road {
+class Edge {
 public:
-    unsigned int Start_NID;
-    unsigned int End_NID;
+    unsigned int Neighbor;
     double Road_length;
 
-public:
-    Road() = default;
-
-    Road(unsigned int S_NID, unsigned int E_NID, double RL) : \
-    Start_NID(S_NID), End_NID(E_NID), Road_length(RL) {};
-
-    bool operator<(const Road &a) const {
+    Edge() = default;
+    Edge(unsigned int neighbor, double roadLength) : Neighbor(neighbor), Road_length(roadLength) {}
+private :
+    bool operator<(const Edge &a) const {
         return a.Road_length <= Road_length;
     }
 };
@@ -36,6 +32,6 @@ public:
 using namespace std;
 
 // function declaration
-void read_file(string file_path,unordered_map<unsigned int, set<Road> > & graph);
+void read_file(string file_path,unordered_map<unsigned int, vector<Edge> > & graph);
 void read_lonlat(string file_path,unordered_map<unsigned int, pair<double,double>> &lonlat);
 #endif //SHORTEST_DISTANCE_ALGORITHMS_GRAPH_H
