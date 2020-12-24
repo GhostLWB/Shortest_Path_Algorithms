@@ -61,8 +61,12 @@ Shortest_Distance_Algorithms
     │ graph.h
     │ Dijkstra.cpp
     │ Dijkstra.h
+    │ A_Star.h
+    │ A_Star.cpp
 ```
+
 你需要将algorithm文件夹拷贝到你的项目main代码同一目录下。其中，graph.cpp和graph.h是读取路网文件的工具，以及路网数据结构的定义。
 你可以选择
-1. 将文件路径提供给void read_file(string file_path)函数，这个函数在graph.h中定义，在graph.cpp中实现。读取的路网将存储在全局变量unordered_map<unsigned int, set<Edge> > graph中。然后使用算法类的构造函数传入graph来进行初始化。
-2. 自己读取路网文件后将路网存在unordered_map<unsigned int, set<Edge> > 类型的变量var中，然后使用该变量来初始化一个算法类实例。
+1. 将文件路径提供给void read_file(string file_path,unordered_map<unsigned int, vector<Edge> > & graph);
+函数，这个函数在graph.h中定义，在graph.cpp中实现。并传入变量引用unordered_map<unsigned int, set<Edge> > graph。然后使用Dijkstra或A_Star类的构造函数传入graph引用来进行初始化。
+1. 自己读取路网文件后将路网存在unordered_map<unsigned int, set<Edge> > 类型的变量var中，然后使用该变量来初始化一个算法类实例。
