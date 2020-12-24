@@ -9,8 +9,9 @@
 #include <math.h>
 #include <queue>
 #include "graph.h"
+#include "algorithm"
 #define pi 3.1415926535897932384626433832795
-#define EARTH_RADIUS 6378137 //地球半径 M
+#define EARTH_RADIUS 6378.137 //地球半径 KM
 using namespace std;
 
 /**
@@ -30,7 +31,7 @@ class A_Star {
 public:
     A_Star(const unordered_map<unsigned int, vector<Edge> >& input_graph, unordered_map<unsigned int, pair<double,double>>& input_lonlat);
     double ShortestDistance(unsigned int nodeS,unsigned int nodeT);
-    double ShortestPath(unsigned int nodeS,unsigned int nodeT);
+    double ShortestPath(unsigned int nodeS,unsigned int nodeT,vector<unsigned int> & pathRes);
 private:
     unordered_map<unsigned int, vector<Edge> > graph;
     unordered_map<unsigned int, pair<double,double>> lonlat;

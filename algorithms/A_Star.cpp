@@ -35,8 +35,8 @@ double A_Star::ShortestDistance(unsigned int nodeS, unsigned int nodeT) {
     is_in_open[nodeS] = true;
 
     while (!openlist.empty()) {
+	// fetch the node with the smallest FScore in openlist
         pair<double, Node_A *> curr = *openlist.begin();
-        openlist.erase(openlist.begin());
 
         if (curr.second->node_id == nodeT) {
             return curr.second->GScore;
@@ -44,6 +44,7 @@ double A_Star::ShortestDistance(unsigned int nodeS, unsigned int nodeT) {
 
         // move it from openlist to closelist
         is_in_open[curr.second->node_id] = false;
+        openlist.erase(openlist.begin());
         is_in_close[curr.second->node_id] = true;
 
         // find its neighbor node and expand
@@ -77,9 +78,77 @@ double A_Star::ShortestDistance(unsigned int nodeS, unsigned int nodeT) {
     return -1; // not found
 }
 
+/**
+ * Shortest path algorithm using A star algorithm
+ * @param nodeS
+ * @param nodeT
+ * @param pathRes
+ * @return
+ */
+double A_Star::ShortestPath(unsigned int nodeS, unsigned int nodeT,vector<unsigned int> &pathRes) {
+    set<pair<double, Node_A *>> openlist; // < f_score, node pointer>
+    vector<bool> is_in_open = vector<bool>(graph.size(), false);
+    vector<bool> is_in_close = vector<bool>(graph.size(), false);
 
-double A_Star::rad(double d) {
-    return d * pi / 180.0;
+    // init
+    double f = compute_f_score(0, nodeS, nodeT);
+    Node_A* node = new Node_A(nodeS, 0, f, nullptr);
+    openlist.insert(make_pair(f, node));
+    is_in_open[nodeS] = true;
+
+    while (!openlist.empty()) {
+	// fetch the node with the smallest FScore in openlist
+        pair<double, Node_A *> curr = *openlist.begin();
+
+        if (curr.second->node_id == nodeT) {
+	    Node_A * node_ptr=curr.second;
+	    while(node_ptr!=nullptr){
+		pathRes.push_back(node_ptr->node_id);
+		node_ptr=node_ptr->parent;
+	    }
+	    reverse(pathRes.begin(),pathRes.end());
+            return curr.second->GScore;
+        }
+
+        // move it from openlist to closelist
+        is_in_open[curr.second->node_id] = false;
+        openlist.erase(openlist.begin());
+        is_in_close[curr.second->node_id] = true;
+
+        // find its neighbor node and expand
+        vector<Edge> roads = graph.find(curr.second->node_id)->second;
+        for (auto road:roads) {
+            unsigned int neighbor_node_id=road.Neighbor;
+
+            if (is_in_close[neighbor_node_id]) { // neighbor_node is in close list
+                continue;
+            }
+
+            double GScoreNeigh = curr.second->GScore + road.Road_length;
+            double FScoreNeigh = compute_f_score(GScoreNeigh, neighbor_node_id, nodeT);
+            Node_A* nodeNeigh = new Node_A(neighbor_node_id, GScoreNeigh, FScoreNeigh, curr.second);
+
+            if (is_in_open[neighbor_node_id]) {
+                for (pair<double, Node_A *> iter:openlist) {
+                    if (iter.second->node_id == neighbor_node_id and iter.second->GScore < nodeNeigh->GScore) {
+                        // the neighbor node in openlist should be updated
+                        //openlist.erase(iter);
+                        //openlist.insert(make_pair(FScoreNeigh,nodeNeigh));
+                        break;
+                    }
+                }
+            }else{
+                openlist.insert(make_pair(FScoreNeigh, nodeNeigh));
+                is_in_open[neighbor_node_id]=true;
+            }// end if
+        }//end searching neighbor nodes
+    }// end while
+    return -1; // not found
+}
+
+double A_Star:: rad(double d)
+{
+    return d * pi /180.0;
 }
 double A_Star::haverSin(double x)
 {
@@ -88,17 +157,16 @@ double A_Star::haverSin(double x)
 }
 
 double A_Star::getDistance(double lon1, double lat1, double lon2, double lat2) {
-    double radlon1 = rad(lon1);
-    double radlat1 = rad(lat1);
-    double radlon2 = rad(lon2);
-    double radlat2 = rad(lat2);
-
-    double a = fabs(radlat1 - radlat2);
-    double b = fabs(radlon1 - radlon2);
-
-    double h = haverSin(b) + cos(lat1) * cos(lat2) * haverSin(a);
-    double distance = 2 * EARTH_RADIUS * asin(sqrt(h));
-    return distance;
+    double a;
+    double b;
+    double radLat1 = rad(lat1);
+    double radLat2 = rad(lat2);
+    a = radLat1 - radLat2;
+    b = rad(lon1) - rad(lon2);
+    double s = 2 * asin(sqrt(pow(sin(a/2),2) + cos(radLat1)*cos(radLat2)*pow(sin(b/2),2)));
+    s = s * EARTH_RADIUS;
+    s = s * 1000;
+    return s;
 }
 
 /**

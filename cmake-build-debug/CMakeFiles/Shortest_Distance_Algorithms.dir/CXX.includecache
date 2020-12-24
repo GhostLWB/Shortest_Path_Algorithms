@@ -21,10 +21,8 @@ queue
 -
 graph.h
 C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/graph.h
-
-C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/Dijkstra.cpp
-Dijkstra.h
-C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/Dijkstra.h
+algorithm
+C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/algorithm
 
 C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/Dijkstra.h
 limits
@@ -41,10 +39,6 @@ queue
 -
 algorithm
 -
-graph.h
-C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/graph.h
-
-C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/graph.cpp
 graph.h
 C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/graph.h
 
