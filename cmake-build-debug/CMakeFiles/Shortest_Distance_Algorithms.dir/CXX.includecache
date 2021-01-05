@@ -24,24 +24,6 @@ C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/graph.h
 algorithm
 C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/algorithm
 
-C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/Dijkstra.h
-limits
--
-vector
--
-set
--
-unordered_map
--
-stack
--
-queue
--
-algorithm
--
-graph.h
-C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/graph.h
-
 C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/graph.h
 vector
 -
@@ -60,15 +42,5 @@ ctime
 fstream
 -
 sstream
--
-
-C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/main.cpp
-algorithms/graph.h
-C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/graph.h
-algorithms/Dijkstra.h
-C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/Dijkstra.h
-algorithms/A_Star.h
-C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/A_Star.h
-random
 -
 
