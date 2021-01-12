@@ -50,8 +50,8 @@ int main() {
         start = clock();
         vector<unsigned int> pathResult;
         pathResult=vector<unsigned int> ();
-        double distance= dijkstra.ShortestPathPriorityQueue(nodeS, nodeT, pathResult);
-        //double distance=dijkstra.ShortestDistancePriorityQueue(nodeS,nodeT);
+        //double distance= dijkstra.ShortestPathPriorityQueue(nodeS, nodeT, pathResult);
+        double distance=dijkstra.ShortestDistancePriorityQueue(nodeS,nodeT);
         finish=clock();
         double totaltime = (double) (finish - start) / CLOCKS_PER_SEC;
         displayResult("Dijkstra priority queue",i,nodeS,nodeT,distance,pathResult,totaltime);
@@ -70,8 +70,8 @@ int main() {
         start = 0, finish = 0;
         start = clock();
         pathResult=vector<unsigned int> ();
-        distance= aStar.ShortestPath(nodeS, nodeT, pathResult);
-        //distance=aStar.ShortestDistance(nodeS,nodeT);
+        //distance= aStar.ShortestPath(nodeS, nodeT, pathResult);
+        distance=aStar.ShortestDistance(nodeS,nodeT);
         finish=clock();
         totaltime = (double) (finish - start) / CLOCKS_PER_SEC;
         displayResult("A Star",i,nodeS,nodeT,distance,pathResult,totaltime);

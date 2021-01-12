@@ -8,6 +8,7 @@
 #include <unordered_map>
 #include <math.h>
 #include <queue>
+#include <memory>
 #include "graph.h"
 #include "algorithm"
 #define pi 3.1415926535897932384626433832795
@@ -22,9 +23,9 @@ public:
     unsigned int node_id;
     double GScore;// distance
     double FScore;
-    Node_A* parent; // parent pointer
+    shared_ptr<Node_A> parent; // parent pointer
 
-    Node_A(unsigned int inputNodeid,double inputGScore, double inputFScore,Node_A * inputParent);
+    Node_A(unsigned int inputNodeid,double inputGScore, double inputFScore,shared_ptr<Node_A> inputParent);
 };
 
 class A_Star {

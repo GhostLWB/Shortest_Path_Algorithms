@@ -10,7 +10,7 @@ A_Star::A_Star(const unordered_map<unsigned int, vector<Edge>> &input_graph,
     lonlat = input_lonlat;
 }
 
-Node_A::Node_A(unsigned int inputNodeid, double inputGScore, double inputFScore, Node_A *inputParent) {
+Node_A::Node_A(unsigned int inputNodeid, double inputGScore, double inputFScore, shared_ptr<Node_A> inputParent) {
     node_id = inputNodeid;
     GScore = inputGScore;
     FScore = inputFScore;
@@ -24,19 +24,19 @@ Node_A::Node_A(unsigned int inputNodeid, double inputGScore, double inputFScore,
  * @return
  */
 double A_Star::ShortestDistance(unsigned int nodeS, unsigned int nodeT) {
-    set<pair<double, Node_A *>> openlist; // < f_score, node pointer>
+    set<pair<double, shared_ptr<Node_A>>> openlist; // < f_score, node pointer>
     vector<bool> is_in_open = vector<bool>(graph.size(), false);
     vector<bool> is_in_close = vector<bool>(graph.size(), false);
 
     // init
     double f = compute_f_score(0, nodeS, nodeT);
-    Node_A *node = new Node_A(nodeS, 0, f, nullptr);
+    shared_ptr<Node_A> node (new Node_A(nodeS, 0, f, nullptr));
     openlist.insert(make_pair(f, node));
     is_in_open[nodeS] = true;
 
     while (!openlist.empty()) {
         // fetch the node with the smallest FScore in openlist
-        pair<double, Node_A *> curr = *openlist.begin();
+        pair<double, shared_ptr<Node_A>> curr = *openlist.begin();
 
         if (curr.second->node_id == nodeT) {
             return curr.second->GScore;
@@ -58,10 +58,10 @@ double A_Star::ShortestDistance(unsigned int nodeS, unsigned int nodeT) {
 
             double GScoreNeigh = curr.second->GScore + road.Road_length;
             double FScoreNeigh = compute_f_score(GScoreNeigh, neighbor_node_id, nodeT);
-            Node_A *nodeNeigh = new Node_A(neighbor_node_id, GScoreNeigh, FScoreNeigh, curr.second);
+            shared_ptr<Node_A> nodeNeigh (new Node_A(neighbor_node_id, GScoreNeigh, FScoreNeigh, curr.second));
 
             if (is_in_open[neighbor_node_id]) {
-                for (pair<double, Node_A *> iter:openlist) {
+                for (pair<double, shared_ptr<Node_A>> iter:openlist) {
                     if (iter.second->node_id == neighbor_node_id and iter.second->GScore >= nodeNeigh->GScore) {
                         // the neighbor node in openlist should be updated
                         openlist.erase(iter);
@@ -86,22 +86,22 @@ double A_Star::ShortestDistance(unsigned int nodeS, unsigned int nodeT) {
  * @return
  */
 double A_Star::ShortestPath(unsigned int nodeS, unsigned int nodeT, vector<unsigned int> &pathRes) {
-    set<pair<double, Node_A *>> openlist; // < f_score, node pointer>
+    set<pair<double, shared_ptr<Node_A>>> openlist; // < f_score, node pointer>
     vector<bool> is_in_open = vector<bool>(graph.size(), false);
     vector<bool> is_in_close = vector<bool>(graph.size(), false);
 
     // init
     double f = compute_f_score(0, nodeS, nodeT);
-    Node_A *node = new Node_A(nodeS, 0, f, nullptr);
+    shared_ptr<Node_A>node (new Node_A(nodeS, 0, f, nullptr));
     openlist.insert(make_pair(f, node));
     is_in_open[nodeS] = true;
 
     while (!openlist.empty()) {
         // fetch the node with the smallest FScore in openlist
-        pair<double, Node_A *> curr = *openlist.begin();
+        pair<double, shared_ptr<Node_A>> curr = *openlist.begin();
 
         if (curr.second->node_id == nodeT) {
-            Node_A *node_ptr = curr.second;
+            shared_ptr<Node_A> node_ptr = curr.second;
             // find the path in a reversive manner
             while (node_ptr != nullptr) {
                 pathRes.push_back(node_ptr->node_id);
@@ -127,10 +127,10 @@ double A_Star::ShortestPath(unsigned int nodeS, unsigned int nodeT, vector<unsig
 
             double GScoreNeigh = curr.second->GScore + road.Road_length;
             double FScoreNeigh = compute_f_score(GScoreNeigh, neighbor_node_id, nodeT);
-            Node_A *nodeNeigh = new Node_A(neighbor_node_id, GScoreNeigh, FScoreNeigh, curr.second);
+            shared_ptr<Node_A> nodeNeigh(new Node_A(neighbor_node_id, GScoreNeigh, FScoreNeigh, curr.second));
 
             if (is_in_open[neighbor_node_id]) {
-                for (pair<double, Node_A *> iter:openlist) {
+                for (pair<double, shared_ptr<Node_A>> iter:openlist) {
                     if (iter.second->node_id == neighbor_node_id and iter.second->GScore > nodeNeigh->GScore) {
                         //the neighbor node in openlist should be updated
                         openlist.erase(iter);
