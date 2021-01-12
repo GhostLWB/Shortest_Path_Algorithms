@@ -9,7 +9,7 @@
 
 # 算法性能如何
 下图是在california路网（21,048个node）上随机进行100条最短路径查询的查询平均耗时.
-![](https://jiantuku-liwenbin.oss-cn-shanghai.aliyuncs.com/%E6%9D%82/performance.jpg)
+![performance](https://jiantuku-liwenbin.oss-cn-shanghai.aliyuncs.com/%E6%9D%82/performance.jpg)
 # 数据集要求与路网存储形式
 数据集描述：路网数据集为文本文件（dataset/map_XXXX/edge.txt），且为边集数组的形式进行存储，格式为：
 ```
