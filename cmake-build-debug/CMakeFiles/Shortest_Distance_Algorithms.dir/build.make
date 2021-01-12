@@ -102,22 +102,9 @@ CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Dijkstra.cpp.s: cmake_for
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Dijkstra.cpp.s"
 	D:\softwares\minGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Dell\Desktop\Shortest_Distance_Algorithms\algorithms\Dijkstra.cpp -o CMakeFiles\Shortest_Distance_Algorithms.dir\algorithms\Dijkstra.cpp.s
 
-CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.obj: CMakeFiles/Shortest_Distance_Algorithms.dir/flags.make
-CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.obj: ../algorithms/graph.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Dell\Desktop\Shortest_Distance_Algorithms\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.obj"
-	D:\softwares\minGW\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Shortest_Distance_Algorithms.dir\algorithms\graph.cpp.obj -c C:\Users\Dell\Desktop\Shortest_Distance_Algorithms\algorithms\graph.cpp
-
-CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.i"
-	D:\softwares\minGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Dell\Desktop\Shortest_Distance_Algorithms\algorithms\graph.cpp > CMakeFiles\Shortest_Distance_Algorithms.dir\algorithms\graph.cpp.i
-
-CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.s"
-	D:\softwares\minGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Dell\Desktop\Shortest_Distance_Algorithms\algorithms\graph.cpp -o CMakeFiles\Shortest_Distance_Algorithms.dir\algorithms\graph.cpp.s
-
 CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/A_Star.cpp.obj: CMakeFiles/Shortest_Distance_Algorithms.dir/flags.make
 CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/A_Star.cpp.obj: ../algorithms/A_Star.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Dell\Desktop\Shortest_Distance_Algorithms\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/A_Star.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Dell\Desktop\Shortest_Distance_Algorithms\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/A_Star.cpp.obj"
 	D:\softwares\minGW\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Shortest_Distance_Algorithms.dir\algorithms\A_Star.cpp.obj -c C:\Users\Dell\Desktop\Shortest_Distance_Algorithms\algorithms\A_Star.cpp
 
 CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/A_Star.cpp.i: cmake_force
@@ -128,25 +115,68 @@ CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/A_Star.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/A_Star.cpp.s"
 	D:\softwares\minGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Dell\Desktop\Shortest_Distance_Algorithms\algorithms\A_Star.cpp -o CMakeFiles\Shortest_Distance_Algorithms.dir\algorithms\A_Star.cpp.s
 
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Graph.cpp.obj: CMakeFiles/Shortest_Distance_Algorithms.dir/flags.make
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Graph.cpp.obj: ../algorithms/Graph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Dell\Desktop\Shortest_Distance_Algorithms\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Graph.cpp.obj"
+	D:\softwares\minGW\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Shortest_Distance_Algorithms.dir\algorithms\Graph.cpp.obj -c C:\Users\Dell\Desktop\Shortest_Distance_Algorithms\algorithms\Graph.cpp
+
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Graph.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Graph.cpp.i"
+	D:\softwares\minGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Dell\Desktop\Shortest_Distance_Algorithms\algorithms\Graph.cpp > CMakeFiles\Shortest_Distance_Algorithms.dir\algorithms\Graph.cpp.i
+
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Graph.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Graph.cpp.s"
+	D:\softwares\minGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Dell\Desktop\Shortest_Distance_Algorithms\algorithms\Graph.cpp -o CMakeFiles\Shortest_Distance_Algorithms.dir\algorithms\Graph.cpp.s
+
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GraphPartition.cpp.obj: CMakeFiles/Shortest_Distance_Algorithms.dir/flags.make
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GraphPartition.cpp.obj: ../algorithms/GraphPartition.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Dell\Desktop\Shortest_Distance_Algorithms\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GraphPartition.cpp.obj"
+	D:\softwares\minGW\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Shortest_Distance_Algorithms.dir\algorithms\GraphPartition.cpp.obj -c C:\Users\Dell\Desktop\Shortest_Distance_Algorithms\algorithms\GraphPartition.cpp
+
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GraphPartition.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GraphPartition.cpp.i"
+	D:\softwares\minGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Dell\Desktop\Shortest_Distance_Algorithms\algorithms\GraphPartition.cpp > CMakeFiles\Shortest_Distance_Algorithms.dir\algorithms\GraphPartition.cpp.i
+
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GraphPartition.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GraphPartition.cpp.s"
+	D:\softwares\minGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Dell\Desktop\Shortest_Distance_Algorithms\algorithms\GraphPartition.cpp -o CMakeFiles\Shortest_Distance_Algorithms.dir\algorithms\GraphPartition.cpp.s
+
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GTree.cpp.obj: CMakeFiles/Shortest_Distance_Algorithms.dir/flags.make
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GTree.cpp.obj: ../algorithms/GTree.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Dell\Desktop\Shortest_Distance_Algorithms\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GTree.cpp.obj"
+	D:\softwares\minGW\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Shortest_Distance_Algorithms.dir\algorithms\GTree.cpp.obj -c C:\Users\Dell\Desktop\Shortest_Distance_Algorithms\algorithms\GTree.cpp
+
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GTree.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GTree.cpp.i"
+	D:\softwares\minGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Dell\Desktop\Shortest_Distance_Algorithms\algorithms\GTree.cpp > CMakeFiles\Shortest_Distance_Algorithms.dir\algorithms\GTree.cpp.i
+
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GTree.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GTree.cpp.s"
+	D:\softwares\minGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Dell\Desktop\Shortest_Distance_Algorithms\algorithms\GTree.cpp -o CMakeFiles\Shortest_Distance_Algorithms.dir\algorithms\GTree.cpp.s
+
 # Object files for target Shortest_Distance_Algorithms
 Shortest_Distance_Algorithms_OBJECTS = \
 "CMakeFiles/Shortest_Distance_Algorithms.dir/main.cpp.obj" \
 "CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Dijkstra.cpp.obj" \
-"CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.obj" \
-"CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/A_Star.cpp.obj"
+"CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/A_Star.cpp.obj" \
+"CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Graph.cpp.obj" \
+"CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GraphPartition.cpp.obj" \
+"CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GTree.cpp.obj"
 
 # External object files for target Shortest_Distance_Algorithms
 Shortest_Distance_Algorithms_EXTERNAL_OBJECTS =
 
 Shortest_Distance_Algorithms.exe: CMakeFiles/Shortest_Distance_Algorithms.dir/main.cpp.obj
 Shortest_Distance_Algorithms.exe: CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Dijkstra.cpp.obj
-Shortest_Distance_Algorithms.exe: CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.obj
 Shortest_Distance_Algorithms.exe: CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/A_Star.cpp.obj
+Shortest_Distance_Algorithms.exe: CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Graph.cpp.obj
+Shortest_Distance_Algorithms.exe: CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GraphPartition.cpp.obj
+Shortest_Distance_Algorithms.exe: CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GTree.cpp.obj
 Shortest_Distance_Algorithms.exe: CMakeFiles/Shortest_Distance_Algorithms.dir/build.make
 Shortest_Distance_Algorithms.exe: CMakeFiles/Shortest_Distance_Algorithms.dir/linklibs.rsp
 Shortest_Distance_Algorithms.exe: CMakeFiles/Shortest_Distance_Algorithms.dir/objects1.rsp
 Shortest_Distance_Algorithms.exe: CMakeFiles/Shortest_Distance_Algorithms.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Dell\Desktop\Shortest_Distance_Algorithms\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Shortest_Distance_Algorithms.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Dell\Desktop\Shortest_Distance_Algorithms\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Shortest_Distance_Algorithms.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Shortest_Distance_Algorithms.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

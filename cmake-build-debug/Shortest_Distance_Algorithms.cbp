@@ -92,10 +92,22 @@
 		<Unit filename="C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/Dijkstra.h">
 			<Option target="Shortest_Distance_Algorithms"/>
 		</Unit>
-		<Unit filename="C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/graph.cpp">
+		<Unit filename="C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/GTree.cpp">
 			<Option target="Shortest_Distance_Algorithms"/>
 		</Unit>
-		<Unit filename="C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/graph.h">
+		<Unit filename="C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/GTree.h">
+			<Option target="Shortest_Distance_Algorithms"/>
+		</Unit>
+		<Unit filename="C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/Graph.cpp">
+			<Option target="Shortest_Distance_Algorithms"/>
+		</Unit>
+		<Unit filename="C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/Graph.h">
+			<Option target="Shortest_Distance_Algorithms"/>
+		</Unit>
+		<Unit filename="C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/GraphPartition.cpp">
+			<Option target="Shortest_Distance_Algorithms"/>
+		</Unit>
+		<Unit filename="C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/GraphPartition.h">
 			<Option target="Shortest_Distance_Algorithms"/>
 		</Unit>
 		<Unit filename="C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/main.cpp">

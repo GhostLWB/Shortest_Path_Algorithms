@@ -4,10 +4,8 @@
 
 #include "A_Star.h"
 
-A_Star::A_Star(const unordered_map<unsigned int, vector<Edge>> &input_graph,
-               unordered_map<unsigned int, pair<double, double>> &input_lonlat) {
-    graph = input_graph;
-    lonlat = input_lonlat;
+A_Star::A_Star(Graph* graph) {
+    this->graph = graph;
 }
 
 Node_A::Node_A(unsigned int inputNodeid, double inputGScore, double inputFScore, shared_ptr<Node_A> inputParent) {
@@ -25,8 +23,8 @@ Node_A::Node_A(unsigned int inputNodeid, double inputGScore, double inputFScore,
  */
 double A_Star::ShortestDistance(unsigned int nodeS, unsigned int nodeT) {
     set<pair<double, shared_ptr<Node_A>>> openlist; // < f_score, node pointer>
-    vector<bool> is_in_open = vector<bool>(graph.size(), false);
-    vector<bool> is_in_close = vector<bool>(graph.size(), false);
+    vector<bool> is_in_open = vector<bool>(this->graph->graph_size, false);
+    vector<bool> is_in_close = vector<bool>(this->graph->graph_size, false);
 
     // init
     double f = compute_f_score(0, nodeS, nodeT);
@@ -48,15 +46,15 @@ double A_Star::ShortestDistance(unsigned int nodeS, unsigned int nodeT) {
         is_in_close[curr.second->node_id] = true;
 
         // find its neighbor node and expand
-        vector<Edge> roads = graph.find(curr.second->node_id)->second;
+        vector<Edge*> roads = this->graph->graph_nodes.find(curr.second->node_id)->second->edges;
         for (auto road:roads) {
-            unsigned int neighbor_node_id = road.Neighbor;
+            unsigned int neighbor_node_id = road->node_id;
 
             if (is_in_close[neighbor_node_id]) { // neighbor_node is in close list
                 continue;
             }
 
-            double GScoreNeigh = curr.second->GScore + road.Road_length;
+            double GScoreNeigh = curr.second->GScore + road->distance;
             double FScoreNeigh = compute_f_score(GScoreNeigh, neighbor_node_id, nodeT);
             shared_ptr<Node_A> nodeNeigh (new Node_A(neighbor_node_id, GScoreNeigh, FScoreNeigh, curr.second));
 
@@ -87,8 +85,8 @@ double A_Star::ShortestDistance(unsigned int nodeS, unsigned int nodeT) {
  */
 double A_Star::ShortestPath(unsigned int nodeS, unsigned int nodeT, vector<unsigned int> &pathRes) {
     set<pair<double, shared_ptr<Node_A>>> openlist; // < f_score, node pointer>
-    vector<bool> is_in_open = vector<bool>(graph.size(), false);
-    vector<bool> is_in_close = vector<bool>(graph.size(), false);
+    vector<bool> is_in_open = vector<bool>(this->graph->graph_size, false);
+    vector<bool> is_in_close = vector<bool>(this->graph->graph_size, false);
 
     // init
     double f = compute_f_score(0, nodeS, nodeT);
@@ -117,15 +115,15 @@ double A_Star::ShortestPath(unsigned int nodeS, unsigned int nodeT, vector<unsig
         is_in_close[curr.second->node_id] = true;
 
         // find its neighbor node and expand
-        vector<Edge> roads = graph.find(curr.second->node_id)->second;
+        vector<Edge*> roads = this->graph->graph_nodes.find(curr.second->node_id)->second->edges;
         for (auto road:roads) {
-            unsigned int neighbor_node_id = road.Neighbor;
+            unsigned int neighbor_node_id = road->node_id;
 
             if (is_in_close[neighbor_node_id]) { // neighbor_node is in close list
                 continue;
             }
 
-            double GScoreNeigh = curr.second->GScore + road.Road_length;
+            double GScoreNeigh = curr.second->GScore + road->distance;
             double FScoreNeigh = compute_f_score(GScoreNeigh, neighbor_node_id, nodeT);
             shared_ptr<Node_A> nodeNeigh(new Node_A(neighbor_node_id, GScoreNeigh, FScoreNeigh, curr.second));
 
@@ -178,8 +176,8 @@ double A_Star::getDistance(double lon1, double lat1, double lon2, double lat2) {
  **/
 double A_Star::compute_f_score(double GScore, unsigned int curNode, unsigned int nodeT) {
     //return GScore;
-    pair<double, double> lonlatCurNode = lonlat.find(curNode)->second; // longitude,latitude
-    pair<double, double> lonlatNodeT = lonlat.find(nodeT)->second;
+    pair<double, double> lonlatCurNode = this->graph->graph_nodes.find(curNode)->second->lonlat; // longitude,latitude
+    pair<double, double> lonlatNodeT =this->graph->graph_nodes.find(nodeT)->second->lonlat;
 
     double HScore;
     // latitude and longitude distance, but doesnt work

@@ -196,32 +196,86 @@ algorithms/Dijkstra.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Shortest_Distance_Algorithms.dir\build.make CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Dijkstra.cpp.s
 .PHONY : algorithms/Dijkstra.cpp.s
 
-algorithms/graph.obj: algorithms/graph.cpp.obj
+algorithms/GTree.obj: algorithms/GTree.cpp.obj
 
-.PHONY : algorithms/graph.obj
+.PHONY : algorithms/GTree.obj
 
 # target to build an object file
-algorithms/graph.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Shortest_Distance_Algorithms.dir\build.make CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.obj
-.PHONY : algorithms/graph.cpp.obj
+algorithms/GTree.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Shortest_Distance_Algorithms.dir\build.make CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GTree.cpp.obj
+.PHONY : algorithms/GTree.cpp.obj
 
-algorithms/graph.i: algorithms/graph.cpp.i
+algorithms/GTree.i: algorithms/GTree.cpp.i
 
-.PHONY : algorithms/graph.i
+.PHONY : algorithms/GTree.i
 
 # target to preprocess a source file
-algorithms/graph.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Shortest_Distance_Algorithms.dir\build.make CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.i
-.PHONY : algorithms/graph.cpp.i
+algorithms/GTree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Shortest_Distance_Algorithms.dir\build.make CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GTree.cpp.i
+.PHONY : algorithms/GTree.cpp.i
 
-algorithms/graph.s: algorithms/graph.cpp.s
+algorithms/GTree.s: algorithms/GTree.cpp.s
 
-.PHONY : algorithms/graph.s
+.PHONY : algorithms/GTree.s
 
 # target to generate assembly for a file
-algorithms/graph.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Shortest_Distance_Algorithms.dir\build.make CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.s
-.PHONY : algorithms/graph.cpp.s
+algorithms/GTree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Shortest_Distance_Algorithms.dir\build.make CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GTree.cpp.s
+.PHONY : algorithms/GTree.cpp.s
+
+algorithms/Graph.obj: algorithms/Graph.cpp.obj
+
+.PHONY : algorithms/Graph.obj
+
+# target to build an object file
+algorithms/Graph.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Shortest_Distance_Algorithms.dir\build.make CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Graph.cpp.obj
+.PHONY : algorithms/Graph.cpp.obj
+
+algorithms/Graph.i: algorithms/Graph.cpp.i
+
+.PHONY : algorithms/Graph.i
+
+# target to preprocess a source file
+algorithms/Graph.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Shortest_Distance_Algorithms.dir\build.make CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Graph.cpp.i
+.PHONY : algorithms/Graph.cpp.i
+
+algorithms/Graph.s: algorithms/Graph.cpp.s
+
+.PHONY : algorithms/Graph.s
+
+# target to generate assembly for a file
+algorithms/Graph.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Shortest_Distance_Algorithms.dir\build.make CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Graph.cpp.s
+.PHONY : algorithms/Graph.cpp.s
+
+algorithms/GraphPartition.obj: algorithms/GraphPartition.cpp.obj
+
+.PHONY : algorithms/GraphPartition.obj
+
+# target to build an object file
+algorithms/GraphPartition.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Shortest_Distance_Algorithms.dir\build.make CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GraphPartition.cpp.obj
+.PHONY : algorithms/GraphPartition.cpp.obj
+
+algorithms/GraphPartition.i: algorithms/GraphPartition.cpp.i
+
+.PHONY : algorithms/GraphPartition.i
+
+# target to preprocess a source file
+algorithms/GraphPartition.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Shortest_Distance_Algorithms.dir\build.make CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GraphPartition.cpp.i
+.PHONY : algorithms/GraphPartition.cpp.i
+
+algorithms/GraphPartition.s: algorithms/GraphPartition.cpp.s
+
+.PHONY : algorithms/GraphPartition.s
+
+# target to generate assembly for a file
+algorithms/GraphPartition.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Shortest_Distance_Algorithms.dir\build.make CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GraphPartition.cpp.s
+.PHONY : algorithms/GraphPartition.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -265,9 +319,15 @@ help:
 	@echo ... algorithms/Dijkstra.obj
 	@echo ... algorithms/Dijkstra.i
 	@echo ... algorithms/Dijkstra.s
-	@echo ... algorithms/graph.obj
-	@echo ... algorithms/graph.i
-	@echo ... algorithms/graph.s
+	@echo ... algorithms/GTree.obj
+	@echo ... algorithms/GTree.i
+	@echo ... algorithms/GTree.s
+	@echo ... algorithms/Graph.obj
+	@echo ... algorithms/Graph.i
+	@echo ... algorithms/Graph.s
+	@echo ... algorithms/GraphPartition.obj
+	@echo ... algorithms/GraphPartition.i
+	@echo ... algorithms/GraphPartition.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

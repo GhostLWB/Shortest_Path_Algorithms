@@ -30,12 +30,11 @@ public:
 
 class A_Star {
 public:
-    A_Star(const unordered_map<unsigned int, vector<Edge> >& input_graph, unordered_map<unsigned int, pair<double,double>>& input_lonlat);
+    A_Star(Graph* graph);
     double ShortestDistance(unsigned int nodeS,unsigned int nodeT);
     double ShortestPath(unsigned int nodeS,unsigned int nodeT,vector<unsigned int> & pathRes);
 private:
-    unordered_map<unsigned int, vector<Edge> > graph;
-    unordered_map<unsigned int, pair<double,double>> lonlat;
+    Graph* graph;
 
     double rad(double d);
     double haverSin(double x);

@@ -6,7 +6,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/A_Star.cpp" "C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/cmake-build-debug/CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/A_Star.cpp.obj"
   "C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/Dijkstra.cpp" "C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/cmake-build-debug/CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Dijkstra.cpp.obj"
-  "C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/graph.cpp" "C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/cmake-build-debug/CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.obj"
+  "C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/GTree.cpp" "C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/cmake-build-debug/CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GTree.cpp.obj"
+  "C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/GraphPartition.cpp" "C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/cmake-build-debug/CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GraphPartition.cpp.obj"
+  "C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/algorithms/Graph.cpp" "C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/cmake-build-debug/CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.obj"
   "C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/main.cpp" "C:/Users/Dell/Desktop/Shortest_Distance_Algorithms/cmake-build-debug/CMakeFiles/Shortest_Distance_Algorithms.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

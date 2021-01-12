@@ -1,6 +1,8 @@
 #include "algorithms/graph.h"
 #include "algorithms/Dijkstra.h"
 #include "algorithms/A_Star.h"
+#include "algorithms/GraphPartition.h"
+#include "algorithms/GTree.h"
 #include <random>
 /**
  * display the query information and query result
@@ -27,25 +29,27 @@ void displayResult(string algorithmName,unsigned int testcaseID,unsigned int nod
 }
 
 int main() {
-    // global variable
-    unordered_map<unsigned int, vector<Edge> > graph; // the road network
-    unordered_map<unsigned int, pair<double,double>> lonlat; // node_id longitude latitude
-    read_file("../dataset/map_california.txt",graph);
-    read_lonlat("../dataset/lonlat_california.txt",lonlat);
-    unsigned int graphsize=graph.size();
-    cout<<"the number of nodes in graph is: "<<graphsize<<endl;
+    // load road file  (the road dataset is specified in file /algorithms/configure.h)
+    Graph* graph=new Graph();
+    cout<<"the number of nodes in graph is: "<<graph->graph_size<<endl;
 
     Dijkstra dijkstra(graph);
-    A_Star aStar(graph,lonlat);
+    A_Star aStar(graph);
 
+    vector<CoarsenGraph*> coarsenStage=vector<CoarsenGraph*>();
+    coarsening(graph,coarsenStage);
+    GTree gTree(coarsenStage,graph);
+
+    vector<vector<double>> timeComsumings=vector<vector<double>>(4);
     srand((unsigned )time(NULL));
-    for(int i=0;i<100;i++){
+    int testcaseNum=100;
+    for(int i=0;i<testcaseNum;i++){
 
-        unsigned int nodeS=rand()%graphsize;
-        unsigned int nodeT=rand()%graphsize;
-        //unsigned int nodeS=15;
-        //unsigned int nodeT=7;
+        unsigned int nodeS=rand()%graph->graph_size;
+        unsigned int nodeT=rand()%graph->graph_size;
 
+
+        // ======================= Dijkstra with priority queue =======================================================
         clock_t start = 0, finish = 0;
         start = clock();
         vector<unsigned int> pathResult;
@@ -54,19 +58,25 @@ int main() {
         double distance=dijkstra.ShortestDistancePriorityQueue(nodeS,nodeT);
         finish=clock();
         double totaltime = (double) (finish - start) / CLOCKS_PER_SEC;
+        timeComsumings[0].push_back(totaltime);
         displayResult("Dijkstra priority queue",i,nodeS,nodeT,distance,pathResult,totaltime);
+        // ============================================================================================================
 
-        /*
+
+        // ======================= Dijkstra classic ===================================================================
         start = 0, finish = 0;
         start = clock();
         pathResult=vector<unsigned int> ();
-        distance= dijkstra.ShortestPath(nodeS, nodeT, pathResult);
-        //distance=dijkstra.ShortestDistance(nodeS,nodeT);
+        //distance= dijkstra.ShortestPath(nodeS, nodeT, pathResult);
+        distance=dijkstra.ShortestDistance(nodeS,nodeT);
         finish=clock();
         totaltime = (double) (finish - start) / CLOCKS_PER_SEC;
-        displayResult("Dijkstra priority classic",i,nodeS,nodeT,distance,pathResult,totaltime);
-         */
+        timeComsumings[1].push_back(totaltime);
+        displayResult("Dijkstra classic",i,nodeS,nodeT,distance,pathResult,totaltime);
+         //===========================================================================================================
 
+
+         // ======================= A * shortest with plane distance as heuristic ====================================
         start = 0, finish = 0;
         start = clock();
         pathResult=vector<unsigned int> ();
@@ -74,9 +84,29 @@ int main() {
         distance=aStar.ShortestDistance(nodeS,nodeT);
         finish=clock();
         totaltime = (double) (finish - start) / CLOCKS_PER_SEC;
+        timeComsumings[2].push_back(totaltime);
         displayResult("A Star",i,nodeS,nodeT,distance,pathResult,totaltime);
+        //============================================================================================================
 
+        // ======================= G Tree shortest distance algorithm ===============================================
+        start = 0, finish = 0;
+        start = clock();
+        pathResult=vector<unsigned int> ();
+        // GTree has no shortest path version
+        distance=gTree.shortestDistance(nodeS,nodeT,graph);
+        finish=clock();
+        totaltime = (double) (finish - start) / CLOCKS_PER_SEC;
+        timeComsumings[3].push_back(totaltime);
+        displayResult("G Tree",i,nodeS,nodeT,distance,pathResult,totaltime);
+        //============================================================================================================
     }
 
+    for(int i=0;i<4;i++){
+        cout<<"algorithm "<<i<<endl;
+        for(int j=0;j<testcaseNum;j++){
+            cout<<timeComsumings[i][j]<<",";
+        }
+        cout<<endl;
+    }
     return 0;
 }

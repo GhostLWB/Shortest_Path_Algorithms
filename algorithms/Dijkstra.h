@@ -31,7 +31,7 @@ using namespace std;
 
 class Dijkstra {
 public:
-    Dijkstra(const unordered_map<unsigned int, vector<Edge> >& input_graph);
+    Dijkstra(Graph* input_graph);
     double ShortestDistance(unsigned int nodeS, unsigned int nodeT);
     double ShortestPath(unsigned int nodeS, unsigned int nodeT, vector<unsigned int> &pathRes);
 
@@ -41,8 +41,7 @@ private:
     vector<double> distance;
     vector<bool> visited;
     vector<unsigned int> path;
-    unordered_map<unsigned int, vector<Edge> > graph;
-    unsigned int graphSize;
+    Graph* graph;
 
     int find_min_node_id();
 };
