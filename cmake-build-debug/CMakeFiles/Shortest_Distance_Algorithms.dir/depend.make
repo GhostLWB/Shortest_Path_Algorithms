@@ -3,17 +3,35 @@
 
 CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/A_Star.cpp.obj: ../algorithms/A_Star.cpp
 CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/A_Star.cpp.obj: ../algorithms/A_Star.h
-CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/A_Star.cpp.obj: ../algorithms/graph.h
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/A_Star.cpp.obj: ../algorithms/Graph.h
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/A_Star.cpp.obj: ../algorithms/configure.h
 
 CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Dijkstra.cpp.obj: ../algorithms/Dijkstra.cpp
 CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Dijkstra.cpp.obj: ../algorithms/Dijkstra.h
-CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Dijkstra.cpp.obj: ../algorithms/graph.h
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Dijkstra.cpp.obj: ../algorithms/Graph.h
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/Dijkstra.cpp.obj: ../algorithms/configure.h
 
-CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.obj: ../algorithms/graph.cpp
-CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.obj: ../algorithms/graph.h
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GTree.cpp.obj: ../algorithms/A_Star.h
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GTree.cpp.obj: ../algorithms/GTree.cpp
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GTree.cpp.obj: ../algorithms/GTree.h
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GTree.cpp.obj: ../algorithms/Graph.h
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GTree.cpp.obj: ../algorithms/GraphPartition.h
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GTree.cpp.obj: ../algorithms/configure.h
+
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GraphPartition.cpp.obj: ../algorithms/Graph.h
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GraphPartition.cpp.obj: ../algorithms/GraphPartition.cpp
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GraphPartition.cpp.obj: ../algorithms/GraphPartition.h
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/GraphPartition.cpp.obj: ../algorithms/configure.h
+
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.obj: ../algorithms/Graph.cpp
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.obj: ../algorithms/Graph.h
+CMakeFiles/Shortest_Distance_Algorithms.dir/algorithms/graph.cpp.obj: ../algorithms/configure.h
 
 CMakeFiles/Shortest_Distance_Algorithms.dir/main.cpp.obj: ../algorithms/A_Star.h
 CMakeFiles/Shortest_Distance_Algorithms.dir/main.cpp.obj: ../algorithms/Dijkstra.h
-CMakeFiles/Shortest_Distance_Algorithms.dir/main.cpp.obj: ../algorithms/graph.h
+CMakeFiles/Shortest_Distance_Algorithms.dir/main.cpp.obj: ../algorithms/GTree.h
+CMakeFiles/Shortest_Distance_Algorithms.dir/main.cpp.obj: ../algorithms/Graph.h
+CMakeFiles/Shortest_Distance_Algorithms.dir/main.cpp.obj: ../algorithms/GraphPartition.h
+CMakeFiles/Shortest_Distance_Algorithms.dir/main.cpp.obj: ../algorithms/configure.h
 CMakeFiles/Shortest_Distance_Algorithms.dir/main.cpp.obj: ../main.cpp
 
