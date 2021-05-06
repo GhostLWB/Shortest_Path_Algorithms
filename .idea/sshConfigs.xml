@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="SshConfigs">
-    <configs>
-      <sshConfig authType="PASSWORD" host="172.18.167.114" id="084fc349-2360-4dea-b7e8-9438329a3ccc" port="51100" nameFormat="DESCRIPTIVE" username="liwenbin" />
-    </configs>
-  </component>
-</project>
